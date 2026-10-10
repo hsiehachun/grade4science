@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國小四年級自然（四上）可愛手繪風心智筆記 🌸✏️</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Gaegu:wght@400;700&family=Mali:ital,wght@0,400;0,700;1,400&family=Noto+Sans+TC:wght@400;500;700;900&family=Patrick+Hand&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-paper: #FDFBF7;
+            --grid-line: #E5E0D8;
+            --text-main: #2D3748;
+            --text-dark: #1A202C;
+            --u1-color: #0284C7;
+            --u1-bg: #E0F2FE;
+            --u2-color: #059669;
+            --u2-bg: #DCFCE7;
+            --u3-color: #D97706;
+            --u3-bg: #FEF3C7;
+            --u4-color: #7C3AED;
+            --u4-bg: #EDE9FE;
+            --card-shadow: 6px 8px 0px #1E293B;
+            --tape-color: rgba(254, 240, 138, 0.9);
+            --tape-pink: rgba(254, 205, 211, 0.9);
+            --tape-blue: rgba(186, 230, 253, 0.9);
+            --tape-green: rgba(187, 247, 208, 0.9);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', 'Mali', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-paper);
+            background-image: 
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+            background-size: 24px 24px;
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 80px;
+        }
+
+        /* Top Sticky Header */
+        header {
+            background: #FFFFFF;
+            border-bottom: 3px dashed #CBD5E1;
+            padding: 20px 16px 14px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .header-title-box {
+            display: inline-block;
+            background: #FEF9C3;
+            border: 2.5px solid #CA8A04;
+            padding: 8px 24px;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            box-shadow: 3px 4px 0px #CA8A04;
+            transform: rotate(-1deg);
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 1.65rem;
+            color: #854D0E;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+        }
+
+        .header-subtitle {
+            font-size: 0.92rem;
+            color: #64748B;
+            margin-bottom: 12px;
+        }
+
+        /* Navigation Buttons */
+        .nav-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-btn {
+            background: #F1F5F9;
+            border: 2px solid #CBD5E1;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            background: #E2E8F0;
+        }
+
+        .nav-btn.u1 { background: #E0F2FE; border-color: #0284C7; color: #0369A1; }
+        .nav-btn.u2 { background: #DCFCE7; border-color: #059669; color: #047857; }
+        .nav-btn.u3 { background: #FEF3C7; border-color: #D97706; color: #B45309; }
+        .nav-btn.u4 { background: #EDE9FE; border-color: #7C3AED; color: #6D28D9; }
+
+        .btn-action {
+            background: #FFFBEB;
+            border: 2px solid #F59E0B;
+            color: #B45309;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-action:hover {
+            background: #FDE68A;
+            transform: scale(1.05);
+        }
+
+        /* Subnav Jump Bar */
+        .subnav-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 8px;
+        }
+        .subnav-pill {
+            background: white;
+            border: 1.5px solid #E2E8F0;
+            padding: 3px 9px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            color: #64748B;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.15s;
+        }
+        .subnav-pill:hover {
+            background: #3B82F6;
+            color: white;
+            border-color: #2563EB;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1100px;
+            margin: 28px auto;
+            padding: 0 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* Unit Banner Box */
+        .unit-hero-banner {
+            background: #FFFFFF;
+            border-radius: 24px;
+            border: 3px solid #1E293B;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            box-shadow: 4px 6px 0px #1E293B;
+            position: relative;
+        }
+        .unit-hero-banner.u1 { border-left: 12px solid #0284C7; }
+        .unit-hero-banner.u2 { border-left: 12px solid #059669; }
+        .unit-hero-banner.u3 { border-left: 12px solid #D97706; }
+        .unit-hero-banner.u4 { border-left: 12px solid #7C3AED; }
+
+        .unit-hero-banner img {
+            width: 170px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 3px solid #FFF;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+            transform: rotate(-2deg);
+            flex-shrink: 0;
+        }
+        .unit-hero-text h2 {
+            font-size: 1.5rem;
+            margin-bottom: 6px;
+            color: #0F172A;
+            font-weight: 900;
+        }
+        .unit-hero-text p {
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Sketchnote Card Container */
+        .sketchnote-card {
+            background: #FFFFFF;
+            border-radius: 24px;
+            border: 3px solid #1E293B;
+            padding: 30px 26px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            scroll-margin-top: 140px;
+            page-break-after: always;
+            break-after: page;
+        }
+
+        /* Cute Washi Tapes */
+        .washi-tape-top-left {
+            position: absolute;
+            top: -12px;
+            left: 28px;
+            width: 85px;
+            height: 24px;
+            background: var(--tape-color);
+            transform: rotate(-4deg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 2px dashed rgba(0,0,0,0.15);
+            border-right: 2px dashed rgba(0,0,0,0.15);
+        }
+        .washi-tape-top-right {
+            position: absolute;
+            top: -12px;
+            right: 28px;
+            width: 85px;
+            height: 24px;
+            background: var(--tape-pink);
+            transform: rotate(3deg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 2px dashed rgba(0,0,0,0.15);
+            border-right: 2px dashed rgba(0,0,0,0.15);
+        }
+
+        /* Card Header */
+        .card-header-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px dashed #CBD5E1;
+            padding-bottom: 14px;
+            margin-bottom: 22px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .card-title-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .card-badge {
+            font-size: 1.05rem;
+            font-weight: 900;
+            padding: 5px 14px;
+            border-radius: 14px;
+            border: 2px solid #0F172A;
+            transform: rotate(-2deg);
+        }
+        .card-badge.u1 { background: #E0F2FE; color: #0369A1; }
+        .card-badge.u2 { background: #DCFCE7; color: #047857; }
+        .card-badge.u3 { background: #FEF3C7; color: #B45309; }
+        .card-badge.u4 { background: #EDE9FE; color: #6D28D9; }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #0F172A;
+        }
+        .card-subtitle {
+            font-size: 0.88rem;
+            color: #64748B;
+            font-weight: 600;
+        }
+
+        /* Mind Concept Branches */
+        .mind-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+
+        .mind-branch {
+            background: #F8FAFC;
+            border: 2px solid #CBD5E1;
+            border-radius: 18px;
+            padding: 16px;
+            position: relative;
+            transition: all 0.2s;
+        }
+        .mind-branch:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+        }
+        .branch-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #1E293B;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #E2E8F0;
+        }
+        .branch-icon {
+            font-size: 1.25rem;
+        }
+        .branch-content ul {
+            list-style-type: none;
+            padding-left: 2px;
+        }
+        .branch-content li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 0.94rem;
+            color: #334155;
+            line-height: 1.5;
+        }
+        .branch-content li::before {
+            content: "✏️";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 0.75rem;
+        }
+
+        /* Highlighters */
+        .hl-yellow {
+            background: linear-gradient(180deg, transparent 55%, #FEF08A 55%);
+            font-weight: 700;
+            padding: 0 3px;
+        }
+        .hl-pink {
+            background: linear-gradient(180deg, transparent 55%, #FBCFE8 55%);
+            font-weight: 700;
+            padding: 0 3px;
+        }
+        .hl-blue {
+            background: linear-gradient(180deg, transparent 55%, #BAE6FD 55%);
+            font-weight: 700;
+            padding: 0 3px;
+        }
+        .hl-green {
+            background: linear-gradient(180deg, transparent 55%, #BBF7D0 55%);
+            font-weight: 700;
+            padding: 0 3px;
+        }
+
+        /* Feature Row: Mnemonic + Misconceptions */
+        .feature-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+        @media (max-width: 768px) {
+            .feature-row { grid-template-columns: 1fr; }
+            .unit-hero-banner { flex-direction: column; text-align: center; }
+            .unit-hero-banner img { width: 140px; height: 140px; }
+        }
+
+        /* Mnemonic Sticky Note */
+        .sticky-mnemonic {
+            background: #FEF9C3;
+            border: 2px solid #FACC15;
+            border-radius: 16px;
+            padding: 14px 18px;
+            box-shadow: 2px 3px 6px rgba(250, 204, 21, 0.25);
+            position: relative;
+            transform: rotate(-0.5deg);
+        }
+        .sticky-pin {
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 1.1rem;
+        }
+        .sticky-title {
+            font-size: 0.98rem;
+            font-weight: 800;
+            color: #854D0E;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .sticky-body {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #713F12;
+            line-height: 1.5;
+        }
+
+        /* Misconception Alert Box */
+        .misconception-box {
+            background: #FFF1F2;
+            border: 2px solid #FECDD3;
+            border-radius: 16px;
+            padding: 14px 18px;
+            position: relative;
+        }
+        .misconception-title {
+            font-size: 0.98rem;
+            font-weight: 800;
+            color: #9F1239;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .misconception-item {
+            font-size: 0.92rem;
+            color: #881337;
+            margin-bottom: 4px;
+            line-height: 1.45;
+        }
+        .misconception-item strong.wrong {
+            color: #E11D48;
+            text-decoration: line-through;
+            font-weight: 700;
+        }
+        .misconception-item strong.right {
+            color: #059669;
+            font-weight: 700;
+        }
+
+        /* Interactive Self-Quiz Box */
+        .quiz-container {
+            background: #F0FDF4;
+            border: 2px dashed #86EFAC;
+            border-radius: 16px;
+            padding: 14px 18px;
+        }
+        .quiz-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .quiz-q-text {
+            font-size: 0.95rem;
+            color: #166534;
+            font-weight: 700;
+        }
+        .quiz-toggle-btn {
+            background: #22C55E;
+            color: white;
+            border: none;
+            padding: 5px 14px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .quiz-toggle-btn:hover {
+            background: #16A34A;
+        }
+        .quiz-ans-text {
+            display: none;
+            margin-top: 10px;
+            padding: 10px 14px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            border: 1.5px solid #86EFAC;
+            color: #15803D;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+
+        /* Doodle Tables */
+        .doodle-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 0.88rem;
+        }
+        .doodle-table th, .doodle-table td {
+            border: 1.5px solid #CBD5E1;
+            padding: 6px 10px;
+            text-align: left;
+        }
+        .doodle-table th {
+            background: #F1F5F9;
+            color: #1E293B;
+            font-weight: 700;
+        }
+        .doodle-table tr:nth-child(even) {
+            background: #F8FAFC;
+        }
+
+        /* Print Media Styles */
+        @media print {
+            header, .btn-action, .subnav-container, .quiz-toggle-btn {
+                display: none !important;
+            }
+            body {
+                background: white !important;
+                padding: 0 !important;
+            }
+            .main-content {
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                gap: 0 !important;
+            }
+            .unit-hero-banner {
+                page-break-before: always;
+                break-before: page;
+                margin-bottom: 20px;
+            }
+            .sketchnote-card {
+                border: 2.5px solid #000 !important;
+                box-shadow: none !important;
+                page-break-inside: avoid !important;
+                page-break-after: always !important;
+                break-after: page !important;
+                margin-bottom: 24px !important;
+                padding: 18px !important;
+            }
+            .quiz-ans-text {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-title-box">
+        <h1>🌸 國小四年級自然（四上）全冊可愛手繪風心智筆記 ✏️</h1>
+    </div>
+    <div class="header-subtitle">
+        💡 依據 115 課綱自然領域教材精心繪製 ‧ 13 個小單元全套圖解心智筆記卡 ‧ 重點/口訣/迷思一網打盡
+    </div>
+    
+    <div class="nav-container">
+        <a href="sun_earth_moon_simulator.html" target="_blank" class="nav-btn" style="background:#FEF08A; border-color:#EAB308; color:#854D0E; font-weight:900;">🚀 太陽/地球/月球公轉影片與模擬器</a>
+        <button class="nav-btn u1" onclick="scrollToEl('unit-1-banner')">🌌 第一單元：閃亮的天空 (3張)</button>
+        <button class="nav-btn u2" onclick="scrollToEl('unit-2-banner')">💧 第二單元：水域環境 (4張)</button>
+        <button class="nav-btn u3" onclick="scrollToEl('unit-3-banner')">🧪 第三單元：物質變變變 (3張)</button>
+        <button class="nav-btn u4" onclick="scrollToEl('unit-4-banner')">🔔 第四單元：聲光世界真有趣 (3張)</button>
+        <button class="btn-action" onclick="window.print()">🖨️ 一鍵列印/匯出筆記卡</button>
+    </div>
+
+    <div class="subnav-container">
+        <a href="#card-1-1" class="subnav-pill">1-1 一天的天空</a>
+        <a href="#card-1-2" class="subnav-pill">1-2 月亮的位置</a>
+        <a href="#card-1-3" class="subnav-pill">1-3 月相的變化</a>
+        <a href="#card-2-1" class="subnav-pill">2-1 認識水域環境</a>
+        <a href="#card-2-2" class="subnav-pill">2-2 水生植物</a>
+        <a href="#card-2-3" class="subnav-pill">2-3 水生動物</a>
+        <a href="#card-2-4" class="subnav-pill">2-4 珍惜水域環境</a>
+        <a href="#card-3-1" class="subnav-pill">3-1 影響物質變化的因素</a>
+        <a href="#card-3-2" class="subnav-pill">3-2 溫度對物質的影響</a>
+        <a href="#card-3-3" class="subnav-pill">3-3 酸與鹼對物質的影響</a>
+        <a href="#card-4-1" class="subnav-pill">4-1 聲音的產生與傳播</a>
+        <a href="#card-4-2" class="subnav-pill">4-2 光的直進與反射</a>
+        <a href="#card-4-3" class="subnav-pill">4-3 聲音和光的應用</a>
+    </div>
+</header>
+
+<main class="main-content">
+
+    <!-- ==================== UNIT 1 ==================== -->
+    <section id="unit-1-banner" class="unit-hero-banner u1">
+        <img src="images/nature_unit1_cover_1790410847451.jpg" alt="第一單元 閃亮的天空">
+        <div class="unit-hero-text">
+            <h2>🌌 第一單元：閃亮的天空（全單元 3 張筆記卡）</h2>
+            <p>探索大自然的星空奧祕！從太陽在一天中的東升西落、影子的神奇長短變化，到學會用指北針與高度角測量月亮，再到認識農曆月相 29.5 天的圓缺規律！跟著可愛心智筆記，一起當個小小天文家！✨🔭</p>
+        </div>
+    </section>
+
+    <!-- CARD 1-1 -->
+    <article id="card-1-1" class="sketchnote-card">
+        <div style="text-align:center; margin: 15px 0 25px;">
+            <img src="images/card_1_1.png" alt="小單元 1-1 繁體中文手繪心智圖卡" style="width:100%; max-width:920px; border-radius:18px; border:2.5px solid #CBD5E1; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
+        </div>
+        <div class="washi-tape-top-left"></div>
+        <div class="washi-tape-top-right"></div>
+        <div class="card-header-box">
+            <div class="card-title-group">
+                <span class="card-badge u1">第 1 張</span>
+                <span class="card-title">✨ 1-1 一天的天空 ☀️</span>
+            </div>
+            <span class="card-subtitle">自然四上 ‧ 太陽與影子 ‧ 白天與夜空</span>
+        </div>
+
+        <div class="mind-grid">
+            <!-- Branch 1 -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">☀️</span>
+                    <span>太陽在一天中的移動路徑</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><span class="hl-yellow">早上 (約 8:00)</span>：太陽從<strong>東方升起</strong>，仰角較低。</li>
+                        <li><span class="hl-yellow">中午 (約 12:00)</span>：太陽在<strong>頭頂正上方偏南</strong>，仰角最高。</li>
+                        <li><span class="hl-yellow">下午 (約 16:00)</span>：太陽往<strong>西方落下</strong>，仰角再次變低。</li>
+                        <li><strong>重要結論</strong>：太陽在一天中的移動方向是「<span class="hl-blue">由東向西</span>」！</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Branch 2 -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🌲</span>
+                    <span>太陽與影子的黃金相反定律</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><strong>方向永遠相反</strong>：
+                            <br>早上太陽在東 ➔ 影子在 <span class="hl-pink">西方</span>
+                            <br>下午太陽在西 ➔ 影子在 <span class="hl-pink">東方</span>
+                        </li>
+                        <li><strong>影長與高度相反</strong>：
+                            <br>太陽位置越高 ➔ 地上影子 <span class="hl-blue">越短</span>
+                            <br>太陽位置越低 ➔ 地上影子 <span class="hl-blue">越長</span>
+                        </li>
+                        <li><strong>中午 12:00</strong>：影子在腳下「<span class="hl-yellow">最短</span>」！</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Branch 3 -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🌙</span>
+                    <span>白天與夜空的天體探索</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><span class="hl-yellow">白天天空</span>：陽光極強烈，⚠️<strong>絕對禁止用肉眼直視太陽</strong>（會灼傷眼睛！可透過觀察影子得知太陽位置）。天氣好時偶爾可見淡白色月亮。</li>
+                        <li><span class="hl-blue">夜晚天空</span>：太陽落下後天色變暗，月亮與星星閃閃發光。</li>
+                        <li><strong>最佳觀星條件</strong>：<span class="hl-green">雲量少、光害少、空曠安全</span>的地點。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <div class="sticky-mnemonic">
+                <span class="sticky-pin">📌</span>
+                <div class="sticky-title">💡 可愛記憶口訣</div>
+                <div class="sticky-body">
+                    🌟「太陽東升向西落，影子西移向東走；<br>太陽高高頭頂照，地上影子縮最短！」
+                </div>
+            </div>
+
+            <div class="misconception-box">
+                <div class="misconception-title">🛡️ 易錯迷思避雷針</div>
+                <div class="misconception-item">
+                    ❌ <strong class="wrong">中午 12 點太陽在頭頂，物體完全沒有影子？</strong><br>
+                    ✔️ <strong class="right">正解：</strong>在臺灣地區，正中午時太陽依然會有些微角度或在正上方，物體下方依然有「最短」的影子。
+                </div>
+                <div class="misconception-item">
+                    ❌ <strong class="wrong">白天絕對看不到月亮？</strong><br>
+                    ✔️ <strong class="right">正解：</strong>農曆初七、八之後或滿月前後的白天，天氣晴朗時常能在天空中清楚看見月亮！
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <span class="quiz-q-text">⭐ 隨堂快問快答：早上上學時面向校門口（南方），太陽在左手邊（東方），校門口的樹影會偏向哪一方？</span>
+                <button class="quiz-toggle-btn" onclick="toggleQuiz('q1-1')">點我看解答 👀</button>
+            </div>
+            <div id="q1-1" class="quiz-ans-text">
+                🎉 解答：<strong>西方（右手邊）</strong>！因為太陽與影子的方向「永遠相反」，早上太陽在東方，影子必定指向西方！
+            </div>
+        </div>
+    </article>
+
+    <!-- CARD 1-2 -->
+    <article id="card-1-2" class="sketchnote-card">
+        <div style="text-align:center; margin: 15px 0 25px;">
+            <img src="images/card_1_2.png" alt="小單元 1-2 繁體中文手繪心智圖卡" style="width:100%; max-width:920px; border-radius:18px; border:2.5px solid #CBD5E1; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
+        </div>
+        <div class="washi-tape-top-left"></div>
+        <div class="washi-tape-top-right"></div>
+        <div class="card-header-box">
+            <div class="card-title-group">
+                <span class="card-badge u1">第 2 張</span>
+                <span class="card-title">✨ 1-2 月亮的位置 🧭</span>
+            </div>
+            <span class="card-subtitle">自然四上 ‧ 地面參考物 ‧ 指北針 ‧ 高度角量測</span>
+        </div>
+
+        <div class="mind-grid">
+            <!-- Branch 1 -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">📍</span>
+                    <span>精準描述月亮位置三要素</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><strong>1. 地面固定參考物</strong>：選擇不會動的景物（如學校大樓、路燈、大樹、涼亭頂端），方便比對相對位置。</li>
+                        <li><strong>2. 方位 (八大方位)</strong>：使用「<span class="hl-blue">指北針</span>」平放測量（東、東南、南、西南、西、西北、北、東北）。</li>
+                        <li><strong>3. 高度角 (仰角 0°~90°)</strong>：眼睛平視地平線為 0°，正頭頂為 90°。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Branch 2 -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">✊</span>
+                    <span>高度角測量雙法寶</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><span class="hl-pink">法寶一：拳頭計算法（人體量角器）</span>
+                            <br>手臂伸直向前平舉，視線水平對齊拳頭下緣（0°），握拳向上疊加，<strong>一拳約 10 度</strong>！疊 4 拳約為 40°。
+                        </li>
+                        <li><span class="hl-yellow">法寶二：高度角觀測器（精準測量）</span>
+                            <br>利用「量角器 + 吸管 + 棉線 + 重錘」，眼睛透過吸管瞄準月亮，待棉線垂球靜止後手指壓住棉線，讀取刻度。
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Branch 3 -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🌙</span>
+                    <span>一天中月亮的移動規律</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><strong>移動軌跡</strong>：月亮和太陽一樣，在一天中也是「<span class="hl-yellow">由東向西移動</span>」。</li>
+                        <li><strong>高度角變化</strong>：東方升起（高度角低） ➔ 移到南方天空（<span class="hl-pink">高度角最高</span>） ➔ 西方落下（高度角變低）。</li>
+                        <li><strong>規律</strong>：高度角呈現「<span class="hl-blue">先變高、後變低</span>」的圓弧曲線！</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <div class="sticky-mnemonic">
+                <span class="sticky-pin">📌</span>
+                <div class="sticky-title">💡 可愛記憶口訣</div>
+                <div class="sticky-body">
+                    🧭「看地標、查方位、拳頭伸直量仰角；<br>東升西落南最高，一天軌跡記得牢！」
+                </div>
+            </div>
+
+            <div class="misconception-box">
+                <div class="misconception-title">🛡️ 易錯迷思避雷針</div>
+                <div class="misconception-item">
+                    ❌ <strong class="wrong">用拳頭數高度角時，手肘隨意彎曲？</strong><br>
+                    ✔️ <strong class="right">正解：</strong>手臂一定要「打直伸平」，視線角度基準才會標準準確！
+                </div>
+                <div class="misconception-item">
+                    ❌ <strong class="wrong">指北針靠在鐵欄杆或手機旁測量？</strong><br>
+                    ✔️ <strong class="right">正解：</strong>金屬與磁性物體會干擾磁針，必須平放於遠離金屬的水平桌面或手心上。
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <span class="quiz-q-text">⭐ 隨堂快問快答：小明手伸直測量月亮，從地平線疊加了 5 個拳頭才對準月亮，月亮的高度角大約是幾度？</span>
+                <button class="quiz-toggle-btn" onclick="toggleQuiz('q1-2')">點我看解答 👀</button>
+            </div>
+            <div id="q1-2" class="quiz-ans-text">
+                🎉 解答：<strong>大約 50 度（50°）</strong>！因為手伸直時，每一個拳頭的高度角大約是 10°，5 個拳頭即為 5 × 10° = 50°。
+            </div>
+        </div>
+    </article>
+
+    <!-- CARD 1-3 -->
+    <article id="card-1-3" class="sketchnote-card">
+        <div style="text-align:center; margin: 15px 0 25px;">
+            <img src="images/card_1_3.png" alt="小單元 1-3 繁體中文手繪心智圖卡" style="width:100%; max-width:920px; border-radius:18px; border:2.5px solid #CBD5E1; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
+        </div>
+        <div class="washi-tape-top-left"></div>
+        <div class="washi-tape-top-right"></div>
+        <div class="card-header-box">
+            <div class="card-title-group">
+                <span class="card-badge u1">第 3 張</span>
+                <span class="card-title">✨ 1-3 月相的變化 🌓</span>
+            </div>
+            <span class="card-subtitle">自然四上 ‧ 農曆與月相週期 ‧ 圓缺變化規律 ‧ 傳統節慶</span>
+        </div>
+
+        <div class="mind-grid">
+            <!-- Branch 1 -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🗓️</span>
+                    <span>農曆與月相規律週期</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><strong>農曆（陰曆）</strong>：是古人根據月相的圓缺變化規律所制定的曆法。</li>
+                        <li><strong>月相週期</strong>：從新月到下一次新月，一個完整週期大約是「<span class="hl-yellow">29.5 天（約 30 天 / 一個月）</span>」。</li>
+                        <li>月相變化具有非常固定的規律性與週期性！</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Branch 2 -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🌒</span>
+                    <span>關鍵月相與農曆日期對照</span>
+                </div>
+                <div class="branch-content">
+                    <table class="doodle-table">
+                        <tr><th>農曆日期</th><th>月相名稱</th><th>形狀與亮面特徵</th></tr>
+                        <tr><td>初一</td><td><span class="hl-pink">新月 (朔)</span> 🌑</td><td>整晚看不見月亮</td></tr>
+                        <tr><td>初三~四</td><td>眉月 🌘</td><td>彎彎像細眉，亮面朝右(西)</td></tr>
+                        <tr><td>初七~八</td><td><span class="hl-blue">上弦月</span> 🌓</td><td>半圓形，<strong>亮右半邊 (西邊)</strong></td></tr>
+                        <tr><td>十五~十六</td><td><span class="hl-yellow">滿月 (望)</span> 🌕</td><td>整顆圓圓發亮，通宵可見</td></tr>
+                        <tr><td>廿二~廿三</td><td><span class="hl-green">下弦月</span> 🌗</td><td>半圓形，<strong>亮左半邊 (東邊)</strong></td></tr>
+                        <tr><td>廿七~廿八</td><td>殘月 🌘</td><td>彎細形，亮面朝左(東)</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Branch 3 -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🏮</span>
+                    <span>亮面規律與傳統節慶</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><span class="hl-yellow">亮面方向規律</span>：
+                            <br>初一 ➔ 十五：亮面在<strong>右邊（西方）</strong>，月亮越來越圓。
+                            <br>十五 ➔ 三十：亮面在<strong>左邊（東方）</strong>，月亮越來越缺。
+                        </li>
+                        <li><span class="hl-pink">傳統節慶看月相</span>：
+                            <br>• 春節（正月初一）：新月（無月）
+                            <br>• 元宵節（正月十五） / 中秋節（八月十五）：<strong>滿月</strong> 🌕
+                            <br>• 七夕（七月初七）：<strong>上弦月</strong> 🌓
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <div class="sticky-mnemonic">
+                <span class="sticky-pin">📌</span>
+                <div class="sticky-title">💡 可愛記憶口訣</div>
+                <div class="sticky-body">
+                    🌙「初一朔月黑漆漆，初七上弦右邊圓；<br>十五滿月圓又圓，廿二下弦左邊彎！」
+                </div>
+            </div>
+
+            <div class="misconception-box">
+                <div class="misconception-title">🛡️ 易錯迷思避雷針</div>
+                <div class="misconception-item">
+                    ❌ <strong class="wrong">搞混上弦月與下弦月的亮面方位？</strong><br>
+                    ✔️ <strong class="right">超快分辨法：</strong>
+                    <br>• <strong>上弦月</strong>：像英文字母「<span class="hl-blue">D</span>」，亮「右邊（西邊）」。
+                    <br>• <strong>下弦月</strong>：像英文字母「<span class="hl-pink">C</span>」，亮「左邊（東邊）」。
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <span class="quiz-q-text">⭐ 隨堂快問快答：農曆八月十五中秋節與七月初七七夕情人節，當晚看到的月相分別是什麼？</span>
+                <button class="quiz-toggle-btn" onclick="toggleQuiz('q1-3')">點我看解答 👀</button>
+            </div>
+            <div id="q1-3" class="quiz-ans-text">
+                🎉 解答：中秋節（農曆十五）是<strong>「滿月（望）」🌕</strong>；七夕（農曆初七）是<strong>「上弦月（右邊亮）」🌓</strong>！
+            </div>
+        </div>
+    </article>
+
+    <!-- ==================== UNIT 2 ==================== -->
+    <section id="unit-2-banner" class="unit-hero-banner u2">
+        <img src="images/nature_unit2_water_1790410869664.jpg" alt="第二單元 水域環境">
+        <div class="unit-hero-text">
+            <h2>💧 第二單元：水域環境（全單元 4 張筆記卡）</h2>
+            <p>跳進奇妙的水生王國！從辨識流動與靜止水域、安全野外調查守則，到破解水生植物四大天王（沉水/浮葉/漂浮/挺水）的氣室與防水絕技，再到魚鰓呼吸、水黽滑水等神奇動物構造，最後化身水域守護小衛士！🐸🪷🐟</p>
+        </div>
+    </section>
+
+    <!-- CARD 2-1 -->
+    <article id="card-2-1" class="sketchnote-card">
+        <div style="text-align:center; margin: 15px 0 25px;">
+            <img src="images/card_2_1.png" alt="小單元 2-1 繁體中文手繪心智圖卡" style="width:100%; max-width:920px; border-radius:18px; border:2.5px solid #CBD5E1; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
+        </div>
+        <div class="washi-tape-top-left"></div>
+        <div class="washi-tape-top-right"></div>
+        <div class="card-header-box">
+            <div class="card-title-group">
+                <span class="card-badge u2">第 4 張</span>
+                <span class="card-title">🌊 2-1 認識水域環境 🏞️</span>
+            </div>
+            <span class="card-subtitle">自然四上 ‧ 水域分類 ‧ 調查工具 ‧ 野外安全守則</span>
+        </div>
+
+        <div class="mind-grid">
+            <!-- Branch 1 -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">💧</span>
+                    <span>臺灣常見水域環境分類</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><span class="hl-green">依水流狀態區分</span>：
+                            <br>• <strong>流動水域</strong>：溪流、河流、水溝、小瀑布（水流急、含氧量高）。
+                            <br>• <strong>靜止水域</strong>：湖泊（如嘉明湖）、水庫、池塘、水稻田、校園生態池（水流平緩穩定）。
+                        </li>
+                        <li><span class="hl-blue">依含鹽量區分</span>：
+                            <br>• <strong>淡水水域</strong>：溪流、湖泊、水田。
+                            <br>• <strong>鹹水水域</strong>：海洋、海岸潮間帶。
+                            <br>• <strong>半鹹水（汽水域）</strong>：河口溼地（如新竹香山溼地）、紅樹林沼澤。
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Branch 2 -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🎒</span>
+                    <span>水域調查工具百寶箱</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><span class="hl-yellow">觀察箱</span>：透明底部壓入水面下，<strong>消除水面反光與水波干擾</strong>，清晰觀察水底動植物！</li>
+                        <li><span class="hl-green">撈網與水桶</span>：輕輕撈取水生生物，放入裝水的水桶中觀察。</li>
+                        <li><span class="hl-blue">放大鏡與手套</span>：仔細觀察葉片與細小生物構造，保護雙手避免割傷。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Branch 3 -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">⚠️</span>
+                    <span>水域野外觀察四大安全守則</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><strong>1. 大人陪同</strong>：必須有老師或家長同行，預先查詢天氣與潮汐。</li>
+                        <li><strong>2. 安全穿著</strong>：穿著透氣長袖長褲、<strong>防滑包鞋</strong>、遮陽帽（⚠️ 禁止穿拖鞋或涼鞋）。</li>
+                        <li><strong>3. 絕不貿然下水</strong>：水深危險，不可在危險水域嬉戲或跳入水中。</li>
+                        <li><strong>4. 愛護生態</strong>：觀察完畢後，務必將水生生物<span class="hl-pink">「原地放回」</span>！</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <div class="sticky-mnemonic">
+                <span class="sticky-pin">📌</span>
+                <div class="sticky-title">💡 可愛記憶口訣</div>
+                <div class="sticky-body">
+                    🏞️「水域分動靜、鹹淡各不同；<br>長袖包鞋大人陪，觀察箱底看分明，生物放回愛地球！」
+                </div>
+            </div>
+
+            <div class="misconception-box">
+                <div class="misconception-title">🛡️ 易錯迷思避雷針</div>
+                <div class="misconception-item">
+                    ❌ <strong class="wrong">觀察箱是拿來撈魚用的容器？</strong><br>
+                    ✔️ <strong class="right">正解：</strong>觀察箱是透過透明底部壓入水面「消除反光」以觀察水下生物的工具，不是撈魚網！
+                </div>
+                <div class="misconception-item">
+                    ❌ <strong class="wrong">水塘裡抓到可愛的小魚可以帶回家養？</strong><br>
+                    ✔️ <strong class="right">正解：</strong>為了保護自然生態平衡，觀察完畢後應立即放回原棲息水域。
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <span class="quiz-q-text">⭐ 隨堂快問快答：水域環境中，河流與池塘最主要的水流狀態差異是什麼？</span>
+                <button class="quiz-toggle-btn" onclick="toggleQuiz('q2-1')">點我看解答 👀</button>
+            </div>
+            <div id="q2-1" class="quiz-ans-text">
+                🎉 解答：<strong>河流屬於「流動水域」</strong>（水流較急、溶氧量高）；而<strong>池塘屬於「靜止水域」</strong>（水流平緩靜止）！
+            </div>
+        </div>
+    </article>
+
+    <!-- CARD 2-2 -->
+    <article id="card-2-2" class="sketchnote-card">
+        <div style="text-align:center; margin: 15px 0 25px;">
+            <img src="images/card_2_2.png" alt="小單元 2-2 繁體中文手繪心智圖卡" style="width:100%; max-width:920px; border-radius:18px; border:2.5px solid #CBD5E1; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
+        </div>
+        <div class="washi-tape-top-left"></div>
+        <div class="washi-tape-top-right"></div>
+        <div class="card-header-box">
+            <div class="card-title-group">
+                <span class="card-badge u2">第 5 張</span>
+                <span class="card-title">🌿 2-2 水生植物 🪷</span>
+            </div>
+            <span class="card-subtitle">自然四上 ‧ 四大生長型態 ‧ 氣室構造 ‧ 葉面不沾水適應</span>
+        </div>
+
+        <div class="mind-grid">
+            <!-- Branch 1: Four Types -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🌸</span>
+                    <span>水生植物四大天王（生長型態）</span>
+                </div>
+                <div class="branch-content">
+                    <table class="doodle-table">
+                        <tr><th>生長型態</th><th>根部位置</th><th>莖葉特徵與代表植物</th></tr>
+                        <tr><td><span class="hl-blue">沉水性</span></td><td>固定在水底泥土</td><td>全株沉在水中，莖葉柔軟隨水漂流。<br>👉 <strong>水蘊草、金魚藻</strong></td></tr>
+                        <tr><td><span class="hl-pink">浮葉性</span></td><td>固定在水底泥土</td><td>葉柄柔軟隨水位伸展，葉平貼漂浮水面。<br>👉 <strong>睡蓮、台灣萍蓬草</strong></td></tr>
+                        <tr><td><span class="hl-green">漂浮性</span></td><td>根懸空在水中</td><td>全株漂浮水面，隨風波漂移。<br>👉 <strong>布袋蓮、大萍(水芙蓉)、浮萍</strong></td></tr>
+                        <tr><td><span class="hl-yellow">挺水性</span></td><td>固定在水底泥土</td><td>莖葉粗壯直立，挺出水面生長。<br>👉 <strong>荷花(蓮花)、香蒲、蘆葦</strong></td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Branch 2: Special Adaptations -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🔬</span>
+                    <span>水生植物生存超能力構造</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><span class="hl-yellow">海綿狀「氣室」組織</span>：
+                            <br>• <strong>布袋蓮</strong>：葉柄膨大成海綿狀氣室，充滿空氣，提供極佳浮力！
+                            <br>• <strong>荷花</strong>：葉柄與地下莖（蓮藕）內部有許多通氣管孔，輸送空氣。
+                        </li>
+                        <li><span class="hl-green">葉面防水不沾水絕技</span>：
+                            <br>• <strong>荷花</strong>：葉面密布細微纖毛與蠟質，水滴落在上面會凝結成圓滾滾的滾動水珠！
+                            <br>• <strong>大萍（水芙蓉）</strong>：葉面密布細毛，能捕捉空氣形成保護層浮在水上。
+                        </li>
+                        <li><span class="hl-blue">水蘊草</span>：葉片薄而透光，利於水下光合作用與氣體交換。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <div class="sticky-mnemonic">
+                <span class="sticky-pin">📌</span>
+                <div class="sticky-title">💡 可愛記憶口訣</div>
+                <div class="sticky-body">
+                    🪷「沉水全在底（水蘊草），浮葉貼水皮（睡蓮開）；<br>漂浮根懸空（布袋蓮），挺水直立立（荷花美）！」
+                </div>
+            </div>
+
+            <div class="misconception-box">
+                <div class="misconception-title">🛡️ 易錯迷思避雷針</div>
+                <div class="misconception-item">
+                    ❌ <strong class="wrong">荷花（蓮花）與睡蓮是同一種生長型態？</strong><br>
+                    ✔️ <strong class="right">關鍵區別：</strong>
+                    <br>• <strong>荷花</strong>：屬於「<span class="hl-yellow">挺水性</span>」，葉片挺出水面，葉面不沾水。
+                    <br>• <strong>睡蓮</strong>：屬於「<span class="hl-pink">浮葉性</span>」，葉片貼在水面，葉子邊緣有 V 型缺口。
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <span class="quiz-q-text">⭐ 隨堂快問快答：將布袋蓮的葉柄橫切開來，可以用放大鏡看到裡面有什麼特殊的構造幫助它漂浮？</span>
+                <button class="quiz-toggle-btn" onclick="toggleQuiz('q2-2')">點我看解答 👀</button>
+            </div>
+            <div id="q2-2" class="quiz-ans-text">
+                🎉 解答：<strong>海綿狀的「氣室」</strong>！裡面儲存了大量空氣，就像自備救生圈一樣提供強大的浮力，使布袋蓮能漂浮在水面上！
+            </div>
+        </div>
+    </article>
+
+    <!-- CARD 2-3 -->
+    <article id="card-2-3" class="sketchnote-card">
+        <div style="text-align:center; margin: 15px 0 25px;">
+            <img src="images/card_2_3.png" alt="小單元 2-3 繁體中文手繪心智圖卡" style="width:100%; max-width:920px; border-radius:18px; border:2.5px solid #CBD5E1; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
+        </div>
+        <div class="washi-tape-top-left"></div>
+        <div class="washi-tape-top-right"></div>
+        <div class="card-header-box">
+            <div class="card-title-group">
+                <span class="card-badge u2">第 6 張</span>
+                <span class="card-title">🐠 2-3 水生動物 🐸</span>
+            </div>
+            <span class="card-subtitle">自然四上 ‧ 魚類五大鰭與鰓 ‧ 兩棲類變態 ‧ 水生昆蟲呼吸運動神技</span>
+        </div>
+
+        <div class="mind-grid">
+            <!-- Branch 1: Fish -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🐟</span>
+                    <span>魚類的身體構造與鰓呼吸</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><strong>流線型體型</strong>：減少游動阻力；體表有鱗片與黏液保護。</li>
+                        <li><span class="hl-blue">五大魚鰭分工</span>：
+                            <br>• <strong>尾鰭</strong>：推動身體前進的主要動力。
+                            <br>• <strong>胸鰭、腹鰭</strong>：保持平衡、轉彎與煞車。
+                            <br>• <strong>背鰭、臀鰭</strong>：維持身體直立，防止側翻。
+                        </li>
+                        <li><span class="hl-pink">用「鰓」呼吸</span>：魚口張開吸水 ➔ 水流經鮮紅色的鰓絲交換氧氣 ➔ 鰓蓋打開將水排出。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Branch 2: Frogs & Insects -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🐸</span>
+                    <span>青蛙與水生昆蟲生存絕技</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><span class="hl-green">青蛙（兩棲類）</span>：
+                            <br>• 蝌蚪用「<strong>鰓</strong>」在水中呼吸。
+                            <br>• 成蛙後腳有「<strong>蹼</strong>」利於游泳，用「<strong>肺和潮濕的皮膚</strong>」呼吸。
+                        </li>
+                        <li><span class="hl-yellow">水生昆蟲各顯神通</span>：
+                            <br>• <strong>水黽</strong>：腳上有疏水細毛，利用「<span class="hl-pink">水的表面張力</span>」在水面輕快滑行。
+                            <br>• <strong>龍蝨</strong>：後腳像划槳；潛水時在「翅膀下方攜帶氣泡」呼吸。
+                            <br>• <strong>紅娘華 / 水螳螂</strong>：尾端有細長「呼吸管」伸出水面吸氣。
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <div class="sticky-mnemonic">
+                <span class="sticky-pin">📌</span>
+                <div class="sticky-title">💡 可愛記憶口訣</div>
+                <div class="sticky-body">
+                    🐠「魚鰓換氣尾鰭推，青蛙長蹼肺皮呼；<br>水黽滑水張力妙，龍蝨自備氧氣泡！」
+                </div>
+            </div>
+
+            <div class="misconception-box">
+                <div class="misconception-title">🛡️ 易錯迷思避雷針</div>
+                <div class="misconception-item">
+                    ❌ <strong class="wrong">水生昆蟲全都像魚一樣用鰓在水中呼吸？</strong><br>
+                    ✔️ <strong class="right">正解：</strong>多數水生昆蟲（如龍蝨、水黽、紅娘華）仍然呼吸空氣中的氧氣，透過攜帶氣泡、浮出水面或特化呼吸管來呼吸！
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <span class="quiz-q-text">⭐ 隨堂快問快答：水黽為什麼能夠輕盈地在水面上滑行而不會沉下去？</span>
+                <button class="quiz-toggle-btn" onclick="toggleQuiz('q2-3')">點我看解答 👀</button>
+            </div>
+            <div id="q2-3" class="quiz-ans-text">
+                🎉 解答：因為水黽的腳上密布著<strong>防水的細毛</strong>，配合<strong>「水的表面張力」</strong>，使它能穩穩地支撐在水面上滑行！
+            </div>
+        </div>
+    </article>
+
+    <!-- CARD 2-4 -->
+    <article id="card-2-4" class="sketchnote-card">
+        <div style="text-align:center; margin: 15px 0 25px;">
+            <img src="images/card_2_4.png" alt="小單元 2-4 繁體中文手繪心智圖卡" style="width:100%; max-width:920px; border-radius:18px; border:2.5px solid #CBD5E1; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
+        </div>
+        <div class="washi-tape-top-left"></div>
+        <div class="washi-tape-top-right"></div>
+        <div class="card-header-box">
+            <div class="card-title-group">
+                <span class="card-badge u2">第 7 張</span>
+                <span class="card-title">🌍 2-4 珍惜水域環境 💚</span>
+            </div>
+            <span class="card-subtitle">自然四上 ‧ 水汙染來源 ‧ 外來種危機 ‧ 水資源永續與守護行動</span>
+        </div>
+
+        <div class="mind-grid">
+            <!-- Branch 1: Threats -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">⚠️</span>
+                    <span>水域環境面臨的三大危機</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><span class="hl-pink">1. 水汙染來源</span>：
+                            <br>• <strong>家庭污水</strong>：含磷洗劑造成「優養化」，藻類暴生使水中缺氧。
+                            <br>• <strong>工業廢水</strong>：排放重金屬與化學毒素。
+                            <br>• <strong>農業廢水</strong>：農藥與化肥流失。
+                            <br>• <strong>塑料垃圾</strong>：塑膠袋、吸管造成海洋生物誤食受困。
+                        </li>
+                        <li><span class="hl-yellow">2. 外來種入侵危害</span>：
+                            <br>• <strong>福壽螺</strong>：大量啃食水稻與水生植物幼苗。
+                            <br>• <strong>布袋蓮暴生</strong>：覆蓋整個水面阻擋陽光，導致水下動植物缺氧死亡。
+                            <br>• 琵琶鼠魚（垃圾魚）、綠鬣蜥破壞本土生態。
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Branch 2: Action -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">💚</span>
+                    <span>守護水域的愛心綠色行動</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><span class="hl-green">生活減汙與節水</span>：
+                            <br>• 使用環保無磷洗劑，適量使用。
+                            <br>• 一水多用（洗米洗菜水澆花）、縮短淋浴時間。
+                        </li>
+                        <li><span class="hl-blue">公民守護行動</span>：
+                            <br>• <strong>絕不隨意棄養或放生</strong>外來種動植物！
+                            <br>• 參與淨灘、淨溪活動，垃圾隨手帶走。
+                            <br>• 愛護河川與溼地生態保護區。
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <div class="sticky-mnemonic">
+                <span class="sticky-pin">📌</span>
+                <div class="sticky-title">💡 可愛記憶口訣</div>
+                <div class="sticky-body">
+                    🌍「少用洗劑不亂丟，外來生物不放生；<br>隨手關水愛珍惜，蔚藍水域永常清！」
+                </div>
+            </div>
+
+            <div class="misconception-box">
+                <div class="misconception-title">🛡️ 易錯迷思避雷針</div>
+                <div class="misconception-item">
+                    ❌ <strong class="wrong">放生寵物魚或烏龜到自然溪流是做好事？</strong><br>
+                    ✔️ <strong class="right">正解：</strong>隨意放生外來種（如巴西龜、琵琶鼠魚）會嚴重搶奪本土生物棲地與食物，造成嚴重生態浩劫！
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <span class="quiz-q-text">⭐ 隨堂快問快答：為什麼布袋蓮在池塘中大量過度繁殖時，反而會造成池塘裡的魚蝦死亡？</span>
+                <button class="quiz-toggle-btn" onclick="toggleQuiz('q2-4')">點我看解答 👀</button>
+            </div>
+            <div id="q2-4" class="quiz-ans-text">
+                🎉 解答：因為布袋蓮密密麻麻覆蓋水面，<strong>遮蔽了陽光</strong>使水下植物無法行光合作用，同時腐爛時會消耗水中大量氧氣，造成水質惡化與<strong>魚蝦缺氧死亡</strong>！
+            </div>
+        </div>
+    </article>
+
+    <!-- ==================== UNIT 3 ==================== -->
+    <section id="unit-3-banner" class="unit-hero-banner u3">
+        <img src="images/nature_unit3_matter_1790410892437.jpg" alt="第三單元 物質變變變">
+        <div class="unit-hero-text">
+            <h2>🧪 第三單元：物質變變變（全單元 3 張筆記卡）</h2>
+            <p>歡迎來到神奇的物質變化實驗室！探索水流、風力、潮濕空氣對物質的奇妙改變；觀察冰塊融化、巧克力塑形的可逆三態變化，以及爆米花、熟雞蛋的不可逆質變；最後化身魔法調配師，用紫高麗菜汁調配紅綠酸鹼變色實驗！🍫🧊🍋</p>
+        </div>
+    </section>
+
+    <!-- CARD 3-1 -->
+    <article id="card-3-1" class="sketchnote-card">
+        <div style="text-align:center; margin: 15px 0 25px;">
+            <img src="images/card_3_1.png" alt="小單元 3-1 繁體中文手繪心智圖卡" style="width:100%; max-width:920px; border-radius:18px; border:2.5px solid #CBD5E1; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
+        </div>
+        <div class="washi-tape-top-left"></div>
+        <div class="washi-tape-top-right"></div>
+        <div class="card-header-box">
+            <div class="card-title-group">
+                <span class="card-badge u3">第 8 張</span>
+                <span class="card-title">🌪️ 3-1 影響物質變化的因素 💨</span>
+            </div>
+            <span class="card-subtitle">自然四上 ‧ 流水與風力 ‧ 水蒸氣凝結 ‧ 鐵氧化生鏽 ‧ 物理與化學變化</span>
+        </div>
+
+        <div class="mind-grid">
+            <!-- Branch 1: Forces of Nature -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🌊</span>
+                    <span>大自然力量推動的物質變化</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><span class="hl-blue">流水的作用</span>：
+                            <br>• 河流沖刷搬運沙石，讓岩石互相撞擊磨成圓潤鵝卵石。
+                            <br>• 沙石混入水中使水變混濁，靜置一段時間後沙石沉澱，水又恢復清澈。
+                        </li>
+                        <li><span class="hl-yellow">風與空氣的作用</span>：
+                            <br>• 風吹動塵土使之飛揚散布在空氣中；風吹過水面掀起漣漪與波浪。
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Branch 2: Temperature & Rust -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🌫️</span>
+                    <span>溫度、水分與空氣的共同作用</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><span class="hl-green">水蒸氣遇冷凝結</span>：溫泉上方或熱水冒出的白色水霧，是看不見的「水蒸氣」遇到冷空氣，凝結成肉眼可見的「<span class="hl-blue">小水滴</span>」！</li>
+                        <li><span class="hl-pink">鐵礦與鐵製品生鏽</span>：鐵接觸到「<strong>水</strong>」與「<strong>空氣（氧氣）</strong>」後，表面會慢慢氧化生成紅褐色鐵鏽，這是產生新物質的變化。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Branch 3: Physical vs Chemical -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🔨</span>
+                    <span>變化分類：形態改變 vs 產生新物</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><strong>形態改變（本質不變）</strong>：黏土捏成各種形狀、撕碎紙張、折斷粉筆、冰融化成水。</li>
+                        <li><strong>產生新物質（本質改變）</strong>：鐵生鏽、木材燃燒成黑炭與灰燼。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <div class="sticky-mnemonic">
+                <span class="sticky-pin">📌</span>
+                <div class="sticky-title">💡 可愛記憶口訣</div>
+                <div class="sticky-body">
+                    💨「風吹流水動沙石，水氣遇冷結小滴；<br>潮濕空氣鐵生鏽，物理化學分清楚！」
+                </div>
+            </div>
+
+            <div class="misconception-box">
+                <div class="misconception-title">🛡️ 易錯迷思避雷針</div>
+                <div class="misconception-item">
+                    ❌ <strong class="wrong">熱水或溫泉上方飄出的白煙是水蒸氣？</strong><br>
+                    ✔️ <strong class="right">正解：</strong>「水蒸氣」是無色透明看不見的氣體！我們肉眼看到的白色煙霧，是水蒸氣遇冷已經「凝結」成的小水滴群！
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <span class="quiz-q-text">⭐ 隨堂快問快答：鐵釘要發生生鏽現象，必須同時接觸到哪兩種環境因素？</span>
+                <button class="quiz-toggle-btn" onclick="toggleQuiz('q3-1')">點我看解答 👀</button>
+            </div>
+            <div id="q3-1" class="quiz-ans-text">
+                🎉 解答：<strong>「水分」</strong>和<strong>「空氣（氧氣）」</strong>！若缺少其中之一（如泡在完全隔絕空氣的油中），鐵釘就不容易生鏽！
+            </div>
+        </div>
+    </article>
+
+    <!-- CARD 3-2 -->
+    <article id="card-3-2" class="sketchnote-card">
+        <div style="text-align:center; margin: 15px 0 25px;">
+            <img src="images/card_3_2.png" alt="小單元 3-2 繁體中文手繪心智圖卡" style="width:100%; max-width:920px; border-radius:18px; border:2.5px solid #CBD5E1; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
+        </div>
+        <div class="washi-tape-top-left"></div>
+        <div class="washi-tape-top-right"></div>
+        <div class="card-header-box">
+            <div class="card-title-group">
+                <span class="card-badge u3">第 9 張</span>
+                <span class="card-title">🍫 3-2 溫度對物質的影響 🧊</span>
+            </div>
+            <span class="card-subtitle">自然四上 ‧ 固液氣三態循環 ‧ 可逆融化凝固 ‧ 不可逆質變 ‧ 低溫保鮮</span>
+        </div>
+
+        <div class="mind-grid">
+            <!-- Branch 1: Reversible -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🔄</span>
+                    <span>可逆變化（加熱冷卻可恢復原狀）</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><span class="hl-blue">水的三態循環</span>：
+                            <br>冰塊(固) ──加熱融化──> 水(液) ──受熱蒸發──> 水蒸氣(氣)
+                            <br>水蒸氣(氣) ──遇冷凝結──> 水(液) ──0°C凝固──> 冰塊(固)
+                        </li>
+                        <li><span class="hl-yellow">巧克力與蠟燭</span>：
+                            <br>• <strong>固態巧克力</strong> ──隔水加熱──> 融化成流動巧克力醬 ──倒入模具冷卻──> 重新凝固成固態！
+                            <br>• <strong>蠟燭燃燒</strong> ──受熱熔化成液態蠟油 ──流下冷卻──> 再次凝固。
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Branch 2: Irreversible -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🚫</span>
+                    <span>不可逆變化（加熱質變無法復原）</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><span class="hl-pink">生雞蛋加熱變熟蛋</span>：蛋清由透明黏稠受熱變白色固態（蛋白質變性），冷卻後「<strong>無法變回生雞蛋</strong>」！</li>
+                        <li><span class="hl-yellow">玉米粒爆成爆米花</span>：玉米粒受熱內部壓力爆開成爆米花，冷卻後「<strong>無法變回玉米粒</strong>」！</li>
+                        <li>吐司烤焦成黑炭、木材燃燒成灰燼。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Branch 3: Food Preservation -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">❄️</span>
+                    <span>溫度與食物保鮮科學</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li>高溫潮濕環境下，微生物繁殖迅速，食物容易腐敗發霉。</li>
+                        <li>將食物放入<strong>冰箱冷藏（約 4°C）或冷凍（-18°C）</strong>，低溫能抑制細菌生長繁殖，延緩物質變化，延長食物保鮮期！</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <div class="sticky-mnemonic">
+                <span class="sticky-pin">📌</span>
+                <div class="sticky-title">💡 可愛記憶口訣</div>
+                <div class="sticky-body">
+                    🍫「融化凝固可變回，冰塊蠟燭巧克力；<br>煮熟爆開變不回，低溫保鮮食物美！」
+                </div>
+            </div>
+
+            <div class="misconception-box">
+                <div class="misconception-title">🛡️ 易錯迷思避雷針</div>
+                <div class="misconception-item">
+                    ❌ <strong class="wrong">「融化」和「溶解」是一模一樣的意思？</strong><br>
+                    ✔️ <strong class="right">重要區分：</strong>
+                    <br>• <strong>融化 / 熔化</strong>：純物質「受熱」從固態變成液態（如冰塊融化、巧克力融化）。
+                    <br>• <strong>溶解</strong>：物質均勻分散在液體中（如食鹽「溶於」水中）。
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <span class="quiz-q-text">⭐ 隨堂快問快答：下列哪一項變化在冷卻後「可以」恢復原來的狀態？（A）烤焦的吐司 （B）爆米花 （C）融化的巧克力 （D）熟水煮蛋</span>
+                <button class="quiz-toggle-btn" onclick="toggleQuiz('q3-2')">點我看解答 👀</button>
+            </div>
+            <div id="q3-2" class="quiz-ans-text">
+                🎉 解答：<strong>（C）融化的巧克力</strong>！因為巧克力受熱融化是物理狀態的改變，冷卻凝固後可以重新變回固態巧克力；其餘選項都是不可逆的質變！
+            </div>
+        </div>
+    </article>
+
+    <!-- CARD 3-3 -->
+    <article id="card-3-3" class="sketchnote-card">
+        <div style="text-align:center; margin: 15px 0 25px;">
+            <img src="images/card_3_3.png" alt="小單元 3-3 繁體中文手繪心智圖卡" style="width:100%; max-width:920px; border-radius:18px; border:2.5px solid #CBD5E1; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
+        </div>
+        <div class="washi-tape-top-left"></div>
+        <div class="washi-tape-top-right"></div>
+        <div class="card-header-box">
+            <div class="card-title-group">
+                <span class="card-badge u3">第 10 張</span>
+                <span class="card-title">🍋 3-3 酸與鹼對物質的影響 🧪</span>
+            </div>
+            <span class="card-subtitle">自然四上 ‧ 水溶液酸鹼性 ‧ 紫高麗菜汁指示劑 ‧ 氣泡反應 ‧ 蛋殼實驗</span>
+        </div>
+
+        <div class="mind-grid">
+            <!-- Branch 1: Classification -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🥤</span>
+                    <span>常見水溶液酸鹼家族</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><span class="hl-pink">酸性水溶液</span>：檸檬汁、白醋、汽水、番茄汁（通常帶有酸味）。</li>
+                        <li><span class="hl-green">鹼性水溶液</span>：小蘇打水、肥皂水、石灰水、氨水（摸起來有滑膩感）。</li>
+                        <li><span class="hl-blue">中性水溶液</span>：純水、食鹽水、糖水。</li>
+                        <li>⚠️ <strong>實驗守則</strong>：實驗室內<strong>絕對禁止用嘴嚐或直接觸摸未知液體</strong>！</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Branch 2: Cabbage Indicator -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🟣</span>
+                    <span>天然魔法指示劑──紫高麗菜汁</span>
+                </div>
+                <div class="branch-content">
+                    <table class="doodle-table">
+                        <tr><th>水溶液性質</th><th>代表液體</th><th>滴入紫高麗菜汁顏色</th></tr>
+                        <tr><td><span class="hl-pink">酸性</span></td><td>檸檬汁、白醋</td><td><strong style="color:#E11D48;">紅色 / 粉紅色</strong></td></tr>
+                        <tr><td><span class="hl-blue">中性</span></td><td>純水、食鹽水</td><td><strong style="color:#7C3AED;">紫色 / 藍紫色 (原色)</strong></td></tr>
+                        <tr><td><span class="hl-green">鹼性</span></td><td>小蘇打水、肥皂水</td><td><strong style="color:#059669;">綠色 / 藍綠色 / 黃色</strong></td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Branch 3: Chemical Reactions -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🌋</span>
+                    <span>酸鹼化學反應大驚奇</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><span class="hl-yellow">酸 ＋ 小蘇打粉</span>：白醋或檸檬汁加入小蘇打粉，會劇烈產生大量「<span class="hl-pink">二氧化碳 (CO₂) 氣泡</span>」！（常用於自製火山爆發模型）。</li>
+                        <li><span class="hl-blue">醋泡生雞蛋實驗</span>：生蛋浸泡白醋數天，蛋殼（碳酸鈣）被酸溶解冒出細小氣泡，最後剩下半透明軟 Q 的「<strong>彈力無殼蛋</strong>」！</li>
+                        <li><span class="hl-pink">酸雨危害</span>：酸雨會腐蝕大理石建築與雕像、使土壤水質酸化。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <div class="sticky-mnemonic">
+                <span class="sticky-pin">📌</span>
+                <div class="sticky-title">💡 可愛記憶口訣</div>
+                <div class="sticky-body">
+                    🌈「紫甘藍汁真神奇：酸變紅、中為紫、鹼變綠！<br>小蘇打遇酸冒氣泡，酸雨侵蝕大理石！」
+                </div>
+            </div>
+
+            <div class="misconception-box">
+                <div class="misconception-title">🛡️ 易錯迷思避雷針</div>
+                <div class="misconception-item">
+                    ❌ <strong class="wrong">要分辨水溶液酸不酸，喝喝看最快？</strong><br>
+                    ✔️ <strong class="right">正解：</strong>實驗室中絕對不可用口嚐或直接用手大面積觸摸不明液體，應使用紫高麗菜汁等安全指示劑或酸鹼試紙檢測！
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <span class="quiz-q-text">⭐ 隨堂快問快答：將紫高麗菜汁分別滴入白醋與小蘇打水中，顏色會分別變成什麼顏色？</span>
+                <button class="quiz-toggle-btn" onclick="toggleQuiz('q3-3')">點我看解答 👀</button>
+            </div>
+            <div id="q3-3" class="quiz-ans-text">
+                🎉 解答：滴入白醋（酸性）會變成<strong>「紅色或粉紅色」</strong>；滴入小蘇打水（鹼性）會變成<strong>「綠色或藍綠色」</strong>！
+            </div>
+        </div>
+    </article>
+
+    <!-- ==================== UNIT 4 ==================== -->
+    <section id="unit-4-banner" class="unit-hero-banner u4">
+        <img src="images/nature_unit4_sound_light_1790410909994.jpg" alt="第四單元 聲光世界真有趣">
+        <div class="unit-hero-text">
+            <h2>🔔 第四單元：聲光世界真有趣（全單元 3 張筆記卡）</h2>
+            <p>打開感官，探索聲音與光的奇幻世界！感受物體振動發出美妙聲音、破解固液氣三大傳播媒介與音調高低祕密；見證光走直線的影子與針孔成像、掌握平面鏡反射定律；最後揭開潛望鏡、萬花筒、超音波與反光貓眼的生活科技！🥁🔦🪞</p>
+        </div>
+    </section>
+
+    <!-- CARD 4-1 -->
+    <article id="card-4-1" class="sketchnote-card">
+        <div style="text-align:center; margin: 15px 0 25px;">
+            <img src="images/card_4_1.png" alt="小單元 4-1 繁體中文手繪心智圖卡" style="width:100%; max-width:920px; border-radius:18px; border:2.5px solid #CBD5E1; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
+        </div>
+        <div class="washi-tape-top-left"></div>
+        <div class="washi-tape-top-right"></div>
+        <div class="card-header-box">
+            <div class="card-title-group">
+                <span class="card-badge u4">第 11 張</span>
+                <span class="card-title">🥁 4-1 聲音的產生與傳播 📢</span>
+            </div>
+            <span class="card-subtitle">自然四上 ‧ 物體振動發聲 ‧ 三大傳播介質 ‧ 音量與音調高低</span>
+        </div>
+
+        <div class="mind-grid">
+            <!-- Branch 1: Vibration -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🪘</span>
+                    <span>聲音產生的根本祕密──「振動」！</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li>說話時手摸喉嚨：感覺到<strong>聲帶在劇烈振動</strong>。</li>
+                        <li>敲擊鼓面：鼓面上的小米粒或紙屑會<strong>上下跳動</strong>。</li>
+                        <li>彈撥橡皮筋：橡皮筋快速來回擺動嗡嗡作響。</li>
+                        <li>音叉敲擊放入水中：激起水花與漣漪。</li>
+                        <li><span class="hl-pink">鐵律</span>：<strong>物體振動產生聲音；振動停止，聲音立刻消失！</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Branch 2: Mediums -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🌐</span>
+                    <span>聲音傳播的媒介（三大物質）</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><span class="hl-blue">氣體</span>：空氣是最常見的傳聲媒介（日常說話交談）。</li>
+                        <li><span class="hl-yellow">固體</span>：<strong>傳聲效果最好！</strong>耳朵貼桌面聽輕敲聲、紙杯土電話（拉直棉線傳聲）、醫生聽診器。</li>
+                        <li><span class="hl-green">液體</span>：水底聽岸上哨音、海豚在水中發射聲波溝通。</li>
+                        <li>⚠️ <span class="hl-pink">真空無法傳聲</span>：太空中沒有任何物質介質，即使大爆炸也聽不到聲音！</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Branch 3: Volume & Pitch -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🎶</span>
+                    <span>音量（大小聲）vs 音調（高低音）</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><strong>音量（響度 / 大小聲）</strong>：用力敲擊 ➔ 振動幅度大 ➔ 聲音大；輕輕敲 ➔ 聲音小。</li>
+                        <li><strong>音調（頻率 / 高低音）</strong>：
+                            <br>• <strong>高音（振動快）</strong>：物體 <span class="hl-pink">短、細、緊、薄</span>（如短琴鍵、細弦、拉緊的橡皮筋）。
+                            <br>• <strong>低音（振動慢）</strong>：物體 <span class="hl-blue">長、粗、鬆、厚</span>（如長琴鍵、粗弦、放鬆的橡皮筋）。
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <div class="sticky-mnemonic">
+                <span class="sticky-pin">📌</span>
+                <div class="sticky-title">💡 可愛記憶口訣</div>
+                <div class="sticky-body">
+                    🪘「物體振動發出聲，停止振動音就停；<br>固液氣體皆可傳，真空無物聽不見；<br>短細緊薄聲音高，長粗鬆厚聲音低！」
+                </div>
+            </div>
+
+            <div class="misconception-box">
+                <div class="misconception-title">🛡️ 易錯迷思避雷針</div>
+                <div class="misconception-item">
+                    ❌ <strong class="wrong">用力敲鼓，聲音音調會變得很高？</strong><br>
+                    ✔️ <strong class="right">正解：</strong>用力敲只會使「音量變大（更大聲）」，不會改變音調高低！要改變音調需調整鼓皮鬆緊或大小。
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <span class="quiz-q-text">⭐ 隨堂快問快答：彈奏烏克麗麗或吉他時，按住琴弦使振動的弦長度變「短」，發出的聲音音調會變高還是變低？</span>
+                <button class="quiz-toggle-btn" onclick="toggleQuiz('q4-1')">點我看解答 👀</button>
+            </div>
+            <div id="q4-1" class="quiz-ans-text">
+                🎉 解答：<strong>音調會「變高」</strong>！因為弦越短，振動頻率越快，發出的聲音音調就越高！
+            </div>
+        </div>
+    </article>
+
+    <!-- CARD 4-2 -->
+    <article id="card-4-2" class="sketchnote-card">
+        <div style="text-align:center; margin: 15px 0 25px;">
+            <img src="images/card_4_2.png" alt="小單元 4-2 繁體中文手繪心智圖卡" style="width:100%; max-width:920px; border-radius:18px; border:2.5px solid #CBD5E1; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
+        </div>
+        <div class="washi-tape-top-left"></div>
+        <div class="washi-tape-top-right"></div>
+        <div class="card-header-box">
+            <div class="card-title-group">
+                <span class="card-badge u4">第 12 張</span>
+                <span class="card-title">💡 4-2 光的直進與反射 🪞</span>
+            </div>
+            <span class="card-subtitle">自然四上 ‧ 光直線傳播 ‧ 影子形成 ‧ 針孔成像 ‧ 平面鏡成像定律</span>
+        </div>
+
+        <div class="mind-grid">
+            <!-- Branch 1: Straight Line -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🔦</span>
+                    <span>光的直線前進（直進性）</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><strong>直進原理</strong>：光在同種均勻介質中是沿「<span class="hl-yellow">直線前進</span>」的，不會自己拐彎。</li>
+                        <li><strong>生活證據與現象</strong>：
+                            <br>• <strong>影子的形成</strong>：光照射到不透明物體時，被擋住後方形成暗影。
+                            <br>• <strong>陽光透樹縫</strong>：看見一束束筆直的光柱。
+                            <br>• <strong>水管實驗</strong>：直水管看得到手電筒光，彎曲水管則看不到光。
+                        </li>
+                        <li><span class="hl-pink">針孔成像</span>：光穿過小孔直線前進，在屏幕上形成「<strong>上下顛倒、左右相反</strong>」的倒立實像！</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Branch 2: Reflection -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🪞</span>
+                    <span>光的反射與平面鏡成像定律</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><strong>光的反射</strong>：光線照到物體表面被彈回來的現象。表面越平整光滑（如鏡子、水面、金屬面），反射越規則清晰。</li>
+                        <li><span class="hl-blue">平面鏡成像四大黃金特點</span>：
+                            <br>1. <strong>大小相等</strong>：鏡中的像與實物一樣大。
+                            <br>2. <strong>左右相反</strong>：舉右手，鏡中像看起來像舉左手（文字照鏡成鏡像反字）。
+                            <br>3. <strong>上下不變</strong>：頭依然在上面，不會倒立。
+                            <br>4. <strong>物距等於像距</strong>：離鏡面越遠，鏡中像離鏡面也越遠。
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <div class="sticky-mnemonic">
+                <span class="sticky-pin">📌</span>
+                <div class="sticky-title">💡 可愛記憶口訣</div>
+                <div class="sticky-body">
+                    💡「光走直線不轉彎，被擋形成小黑影；<br>照到鏡子彈回來，大小相同左右反！」
+                </div>
+            </div>
+
+            <div class="misconception-box">
+                <div class="misconception-title">🛡️ 易錯迷思避雷針</div>
+                <div class="misconception-item">
+                    ❌ <strong class="wrong">平面鏡成像會讓物體上下顛倒？</strong><br>
+                    ✔️ <strong class="right">正解：</strong>平面鏡是「<span class="hl-blue">左右相反，上下不變</span>」；針孔成像才是「<span class="hl-pink">上下顛倒、左右相反</span>」！
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <span class="quiz-q-text">⭐ 隨堂快問快答：在紙上寫一個英文字母「b」，拿去照平面鏡，鏡子裡呈現的影像看起來會像哪一個字母？</span>
+                <button class="quiz-toggle-btn" onclick="toggleQuiz('q4-2')">點我看解答 👀</button>
+            </div>
+            <div id="q4-2" class="quiz-ans-text">
+                🎉 解答：看起來像字母<strong>「d」</strong>！因為平面鏡成像具有「左右相反、上下不變」的特性！
+            </div>
+        </div>
+    </article>
+
+    <!-- CARD 4-3 -->
+    <article id="card-4-3" class="sketchnote-card">
+        <div style="text-align:center; margin: 15px 0 25px;">
+            <img src="images/card_4_3.png" alt="小單元 4-3 繁體中文手繪心智圖卡" style="width:100%; max-width:920px; border-radius:18px; border:2.5px solid #CBD5E1; box-shadow:0 8px 24px rgba(0,0,0,0.08);">
+        </div>
+        <div class="washi-tape-top-left"></div>
+        <div class="washi-tape-top-right"></div>
+        <div class="card-header-box">
+            <div class="card-title-group">
+                <span class="card-badge u4">第 13 張</span>
+                <span class="card-title">🔭 4-3 聲音和光的應用 🌟</span>
+            </div>
+            <span class="card-subtitle">自然四上 ‧ 樂器與超音波聲納 ‧ 潛望鏡與萬花筒 ‧ 交通反光安全科技</span>
+        </div>
+
+        <div class="mind-grid">
+            <!-- Branch 1: Sound Apps -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">📢</span>
+                    <span>聲音的科技與生活應用</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><span class="hl-yellow">音樂與樂器</span>：弦樂器（吉他/提琴）、打擊樂器（爵士鼓/木琴）、管樂器（直笛按孔改變空氣柱長短控制高低音）。</li>
+                        <li><span class="hl-pink">醫療超音波</span>：利用高頻超音波反射，安全檢查體內器官與孕婦腹中胎兒。</li>
+                        <li><span class="hl-blue">海洋聲納與回聲定位</span>：
+                            <br>• 潛水艇與漁船利用<strong>聲納 (Sonar)</strong> 發射聲波測量海底深度與魚群位置。
+                            <br>• 蝙蝠利用發出超音波「回聲定位」夜間飛行捕食。
+                        </li>
+                        <li>警笛、消防警報、學校鐘聲傳遞訊號。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Branch 2: Light Apps -->
+            <div class="mind-branch">
+                <div class="branch-title">
+                    <span class="branch-icon">🌈</span>
+                    <span>光的科技與光學儀器應用</span>
+                </div>
+                <div class="branch-content">
+                    <ul>
+                        <li><span class="hl-green">潛望鏡</span>：內部裝設<strong>兩面呈 45 度角</strong>的平面鏡，經過「<span class="hl-pink">兩次光反射</span>」，讓水下潛艇看見水面上的景物！</li>
+                        <li><span class="hl-yellow">萬花筒</span>：利用<strong>三面長條鏡子</strong>組成三角柱，光線在鏡面間「<span class="hl-blue">多次反射</span>」，組合成對稱的美麗圖案。</li>
+                        <li><span class="hl-blue">交通反光科技</span>：反光背心、自行車後反光片、道路<strong>反光貓眼石</strong>（將車燈光線原路反射回駕駛人眼中，保障夜間行車安全）。</li>
+                        <li>凸面鏡（轉彎反射鏡/汽車後照鏡）擴大視野；太陽能光電板轉化綠能；光纖通訊高速傳輸。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <div class="sticky-mnemonic">
+                <span class="sticky-pin">📌</span>
+                <div class="sticky-title">💡 可愛記憶口訣</div>
+                <div class="sticky-body">
+                    🔭「超音波聲納測深處，潛望萬花反射妙；<br>安全貓眼閃光亮，聲光科技生活好！」
+                </div>
+            </div>
+
+            <div class="misconception-box">
+                <div class="misconception-title">🛡️ 易錯迷思避雷針</div>
+                <div class="misconception-item">
+                    ❌ <strong class="wrong">潛望鏡裡面需要裝三面鏡子才能看到景物？</strong><br>
+                    ✔️ <strong class="right">正解：</strong>傳統直角潛望鏡只需裝設「<span class="hl-yellow">兩面</span>」呈 45 度角的平行平面鏡，經過兩次光反射即可看見上方障礙物外的景物！
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <span class="quiz-q-text">⭐ 隨堂快問快答：夜間騎腳踏車時，車尾的反光片本身不會發光，為什麼後方車輛開大燈照射時看起來會非常明亮？</span>
+                <button class="quiz-toggle-btn" onclick="toggleQuiz('q4-3')">點我看解答 👀</button>
+            </div>
+            <div id="q4-3" class="quiz-ans-text">
+                🎉 解答：因為反光片內部有特殊的反射角錐構造，利用<strong>「光的反射」原理</strong>，將後方汽車大燈照過來的光線<strong>「原路反射」</strong>回駕駛人的眼睛，達到明亮的警示效果！
+            </div>
+        </div>
+    </article>
+
+</main>
+
+<script>
+    function toggleQuiz(id) {
+        var el = document.getElementById(id);
+        if (el.style.display === 'block') {
+            el.style.display = 'none';
+        } else {
+            el.style.display = 'block';
+        }
+    }
+
+    function scrollToEl(id) {
+        var el = document.getElementById(id);
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+</script>
+
+</body>
+</html>

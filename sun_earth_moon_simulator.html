@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌌 太陽、地球、月球 自轉與公轉科學模擬教室（第2版：太陽在右側）🚀</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-space: #070B18;
+            --card-bg: #131A2E;
+            --accent-gold: #F59E0B;
+            --accent-blue: #38BDF8;
+            --accent-green: #34D399;
+            --accent-pink: #F43F5E;
+            --text-light: #F8FAFC;
+            --text-muted: #94A3B8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-space);
+            color: var(--text-light);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1E1B4B 0%, #0F172A 100%);
+            border-bottom: 2px solid #334155;
+            padding: 22px 16px 16px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-title-box {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.18);
+            border: 2px solid #F59E0B;
+            padding: 6px 24px;
+            border-radius: 30px;
+            margin-bottom: 6px;
+        }
+
+        h1 {
+            font-size: 1.65rem;
+            color: #FDE047;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: var(--accent-blue);
+            font-weight: 500;
+        }
+
+        .main-container {
+            max-width: 1300px;
+            margin: 24px auto;
+            padding: 0 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        /* 互動即時模擬器區塊 */
+        .simulator-section {
+            background: var(--card-bg);
+            border: 2px solid #334155;
+            border-radius: 20px;
+            padding: 22px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .badge-v2 {
+            background: #E11D48;
+            color: white;
+            font-size: 0.8rem;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-weight: 800;
+        }
+
+        .sim-layout {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 20px;
+        }
+
+        @media (max-width: 1060px) {
+            .sim-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .canvas-container {
+            position: relative;
+            background: #050814;
+            border: 2px solid #334155;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            width: 100%;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.8);
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .sim-controls {
+            background: #0C1222;
+            border: 1.5px solid #334155;
+            border-radius: 16px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .control-label {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .control-value {
+            color: var(--accent-gold);
+            font-weight: 900;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            accent-color: #F59E0B;
+            cursor: pointer;
+            height: 6px;
+        }
+
+        .btn-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .btn-sim {
+            background: #1E293B;
+            border: 1.5px solid #475569;
+            color: var(--text-light);
+            padding: 8px 10px;
+            border-radius: 10px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .btn-sim:hover {
+            background: #334155;
+            border-color: var(--accent-blue);
+        }
+
+        .btn-sim.active {
+            background: #2563EB;
+            border-color: #60A5FA;
+        }
+
+        /* 8個固定月相快速跳轉按鈕 */
+        .phase-jump-title {
+            font-size: 0.85rem;
+            color: var(--accent-blue);
+            font-weight: 700;
+            margin-top: 4px;
+        }
+
+        .phase-jump-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+
+        .btn-phase {
+            background: #151F36;
+            border: 1px solid #334155;
+            color: #E2E8F0;
+            padding: 6px 4px;
+            border-radius: 8px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.15s;
+        }
+
+        .btn-phase:hover {
+            background: #2563EB;
+            border-color: #93C5FD;
+        }
+
+        .live-phase-box {
+            background: #151F36;
+            border: 1.5px solid #3B82F6;
+            border-radius: 14px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .live-phase-title {
+            font-size: 0.88rem;
+            color: var(--accent-gold);
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .live-phase-canvas-wrapper {
+            width: 80px;
+            height: 80px;
+            margin: 6px auto;
+        }
+
+        .live-phase-name {
+            font-size: 1.05rem;
+            font-weight: 900;
+            color: #FFF;
+        }
+
+        .live-phase-date {
+            font-size: 0.82rem;
+            color: var(--accent-blue);
+        }
+
+        /* 影片展示區 */
+        .video-section {
+            background: var(--card-bg);
+            border: 2px solid #334155;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+
+        .video-player-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid #475569;
+            background: #000;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .video-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn-action {
+            background: #2563EB;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-action:hover {
+            background: #1D4ED8;
+            transform: translateY(-2px);
+        }
+
+        .btn-action.gold {
+            background: #D97706;
+        }
+        .btn-action.gold:hover {
+            background: #B45309;
+        }
+
+        /* 知識卡片 */
+        .knowledge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+        }
+
+        .know-card {
+            background: var(--card-bg);
+            border: 2px solid #334155;
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            border-left: 6px solid var(--accent-blue);
+        }
+
+        .know-card.gold { border-left-color: var(--accent-gold); }
+        .know-card.green { border-left-color: var(--accent-green); }
+        .know-card.pink { border-left-color: var(--accent-pink); }
+
+        .know-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .know-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .know-card li {
+            margin-bottom: 8px;
+            font-size: 0.92rem;
+            color: #CBD5E1;
+            line-height: 1.5;
+        }
+
+        .hl-yellow { color: #FBBF24; font-weight: bold; }
+        .hl-blue { color: #38BDF8; font-weight: bold; }
+        .hl-pink { color: #F43F5E; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-title-box">
+        <h1>🌌 太陽、地球、月球 自轉與公轉科學模擬</h1>
+    </div>
+    <div class="subtitle">【第 2 版：太陽在右側 ‧ 臺灣國小教科書標準視角】國小自然四上第一單元</div>
+</header>
+
+<main class="main-container">
+
+    <!-- 1. 即時動態模擬器 (HTML5 Canvas) -->
+    <section class="simulator-section">
+        <div class="section-header">
+            <div class="section-title">
+                <span>🕹️ 太陽在右側 ‧ 2D 即時太空公轉與月相互動模擬器</span>
+                <span class="badge-v2">第 2 版動態</span>
+            </div>
+            <span style="font-size:0.88rem; color:#94A3B8;">🔄 支援主動流暢運轉、拖曳時間軸與 8 大月相點選</span>
+        </div>
+
+        <div class="sim-layout">
+            <!-- Canvas 繪圖區 -->
+            <div class="canvas-container">
+                <canvas id="spaceCanvas" width="960" height="540"></canvas>
+            </div>
+
+            <!-- 控制側欄 -->
+            <div class="sim-controls">
+                <div class="control-group">
+                    <div class="control-label">
+                        <span>📅 農曆日期 / 公轉進度</span>
+                        <span id="dateDisplay" class="control-value">農曆八月初一</span>
+                    </div>
+                    <input type="range" id="timeSlider" min="0" max="29.5" step="0.1" value="0">
+                </div>
+
+                <div class="control-group">
+                    <div class="control-label">
+                        <span>⚡ 運行速度</span>
+                        <span id="speedDisplay" class="control-value">1.0x</span>
+                    </div>
+                    <input type="range" id="speedSlider" min="0.1" max="4.0" step="0.1" value="1.0">
+                </div>
+
+                <div class="btn-grid">
+                    <button id="playPauseBtn" class="btn-sim active">⏸️ 暫停 / 播放</button>
+                    <button id="directionBtn" class="btn-sim">🔄 逆時針運行中</button>
+                </div>
+
+                <!-- 8大月相快速跳轉 -->
+                <div class="control-group">
+                    <div class="phase-jump-title">🎯 課本 8 大月相快速跳轉：</div>
+                    <div class="phase-jump-grid">
+                        <button class="btn-phase" onclick="setDay(0)">初一<br>新月</button>
+                        <button class="btn-phase" onclick="setDay(3.7)">初四<br>眉月</button>
+                        <button class="btn-phase" onclick="setDay(7.4)">初八<br>上弦</button>
+                        <button class="btn-phase" onclick="setDay(11.1)">十一<br>盈凸</button>
+                        <button class="btn-phase" onclick="setDay(14.8)">十五<br>滿月</button>
+                        <button class="btn-phase" onclick="setDay(18.5)">十八<br>虧凸</button>
+                        <button class="btn-phase" onclick="setDay(22.1)">廿三<br>下弦</button>
+                        <button class="btn-phase" onclick="setDay(25.8)">廿八<br>殘月</button>
+                    </div>
+                </div>
+
+                <!-- 即時月相鏡頭 -->
+                <div class="live-phase-box">
+                    <div class="live-phase-title">🔭 從地球仰望月相 (地面視角)</div>
+                    <div class="live-phase-canvas-wrapper">
+                        <canvas id="phaseCanvas" width="80" height="80"></canvas>
+                    </div>
+                    <div id="livePhaseName" class="live-phase-name">新月（朔）🌑</div>
+                    <div id="livePhaseDate" class="live-phase-date">農曆八月初一 ‧ 看不到亮面</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. 第2版高畫質教學影片播放區 -->
+    <section class="video-section">
+        <div class="section-header">
+            <div class="section-title">
+                <span>🎬 第 2 版高畫質教學影片（太陽在右側）</span>
+            </div>
+            <div class="video-actions">
+                <a href="sun_earth_moon_v2_sun_on_right.mp4" download="太陽在右邊_公轉月相影片.mp4" class="btn-action">
+                    ⬇️ 下載 MP4 影片 (太陽在右邊)
+                </a>
+                <a href="sun_earth_moon_v2_preview.gif" download="太陽在右邊_公轉動畫.gif" class="btn-action gold">
+                    🖼️ 下載 GIF 動畫
+                </a>
+            </div>
+        </div>
+
+        <div class="video-player-wrapper">
+            <video controls autoplay loop muted playsinline poster="sun_earth_moon_v2_preview.gif">
+                <source src="sun_earth_moon_v2_sun_on_right.mp4" type="video/mp4">
+                <source src="sun_earth_moon_revolution.mp4" type="video/mp4">
+                您的瀏覽器不支援 HTML5 影片播放。
+            </video>
+        </div>
+    </section>
+
+    <!-- 3. 核心課綱考點重點卡片 -->
+    <section class="knowledge-grid">
+        <div class="know-card gold">
+            <div class="know-title" style="color:#FBBF24;">☀️ 太陽在右側（光源）</div>
+            <ul>
+                <li>• 太陽位於右方，平行陽光<strong>由右向左照射</strong>。</li>
+                <li>• 地球與月球被照亮的一側<strong>永遠是右半邊（亮面）</strong>，背光的<strong>永遠是左半邊（暗面）</strong>。</li>
+            </ul>
+        </div>
+
+        <div class="know-card">
+            <div class="know-title" style="color:#38BDF8;">🌏 地球（中央觀察點）</div>
+            <ul>
+                <li>• <span class="hl-blue">地球自轉</span>：北極俯瞰為<strong>逆時針方向</strong>（西向東），自轉 1 圈 = 1 天（晝夜交替）。</li>
+                <li>• 地球右半邊是「<strong>白晝</strong>」，左半邊是「<strong>黑夜</strong>」。</li>
+            </ul>
+        </div>
+
+        <div class="know-card green">
+            <div class="know-title" style="color:#34D399;">🌕 月球繞地公轉規律</div>
+            <ul>
+                <li>• <span class="hl-yellow">逆時針公轉</span>：右側(初一) ➔ 上方(初八上弦) ➔ 左側(十五滿月) ➔ 下方(廿三下弦)。</li>
+                <li>• <span class="hl-pink">月球同步自轉</span>：自轉週期等於公轉週期（約 29.5 天），在地球上<strong>永遠只能看見月球同一面</strong>！</li>
+            </ul>
+        </div>
+
+        <div class="know-card pink">
+            <div class="know-title" style="color:#F43F5E;">🌓 月相觀察黃金口訣</div>
+            <ul>
+                <li>• <strong>初一新月右側看</strong>（日地月同線，背光不見）。</li>
+                <li>• <strong>初八上弦在上方</strong>（右半邊亮，上半夜見）。</li>
+                <li>• <strong>十五滿月在左側</strong>（日月相對，整夜可見）。</li>
+                <li>• <strong>廿三下弦在下方</strong>（左半邊亮，下半夜見）。</li>
+            </ul>
+        </div>
+    </section>
+
+</main>
+
+<script>
+    // Canvas 模擬器邏輯 (太陽在右側)
+    const canvas = document.getElementById('spaceCanvas');
+    const ctx = canvas.getContext('2d');
+    const phaseCanvas = document.getElementById('phaseCanvas');
+    const pCtx = phaseCanvas.getContext('2d');
+
+    let isPlaying = true;
+    let speed = 1.0;
+    let lunarDay = 0.0; // 0.0 ~ 29.5
+
+    // 星星背景
+    const stars = [];
+    for(let i=0; i<140; i++) {
+        stars.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: Math.random() > 0.8 ? 1.5 : 1.0,
+            alpha: 0.3 + Math.random() * 0.7
+        });
+    }
+
+    function getPhaseInfo(day) {
+        if (day < 1.5 || day >= 28.5) return { name: "新月（朔）", emoji: "🌑", desc: "看不到亮面", date: "初一" };
+        if (day < 6.5) return { name: "眉月", emoji: "🌒", desc: "亮面朝西（右側一彎）", date: `初${Math.floor(day)+1}` };
+        if (day < 9.5) return { name: "上弦月", emoji: "🌓", desc: "亮面朝西（右半亮）", date: "初八" };
+        if (day < 14.0) return { name: "盈凸月", emoji: "🌔", desc: "亮面朝西（大半亮）", date: "十一" };
+        if (day < 16.5) return { name: "滿月（望）", emoji: "🌕", desc: "整夜可見圓滿明月", date: "十五" };
+        if (day < 21.5) return { name: "虧凸月", emoji: "🌖", desc: "亮面朝東（大半亮）", date: "十八" };
+        if (day < 24.5) return { name: "下弦月", emoji: "🌗", desc: "亮面朝東（左半亮）", date: "二十三" };
+        return { name: "殘月", emoji: "🌘", desc: "亮面朝東（清晨殘月）", date: "二十八" };
+    }
+
+    function renderPhase(day) {
+        pCtx.clearRect(0, 0, phaseCanvas.width, phaseCanvas.height);
+        const cx = 40, cy = 40, r = 32;
+        
+        // 暗面底
+        pCtx.beginPath();
+        pCtx.arc(cx, cy, r, 0, Math.PI * 2);
+        pCtx.fillStyle = "#151B2E";
+        pCtx.fill();
+        pCtx.strokeStyle = "#475569";
+        pCtx.lineWidth = 1.5;
+        pCtx.stroke();
+
+        const t = (day % 29.5) / 29.5;
+        const phi = t * Math.PI * 2;
+
+        pCtx.beginPath();
+        if (phi <= Math.PI) {
+            // 右側亮 (新月 -> 滿月)
+            pCtx.arc(cx, cy, r, -Math.PI/2, Math.PI/2, false);
+            const k = Math.cos(phi);
+            for(let a = Math.PI/2; a >= -Math.PI/2; a -= 0.05) {
+                const px = cx - k * r * Math.cos(a);
+                const py = cy + r * Math.sin(a);
+                pCtx.lineTo(px, py);
+            }
+        } else {
+            // 左側亮 (滿月 -> 殘月)
+            pCtx.arc(cx, cy, r, Math.PI/2, -Math.PI/2, false);
+            const k = Math.cos(phi);
+            for(let a = -Math.PI/2; a <= Math.PI/2; a += 0.05) {
+                const px = cx - k * r * Math.cos(a);
+                const py = cy + r * Math.sin(a);
+                pCtx.lineTo(px, py);
+            }
+        }
+        pCtx.fillStyle = "#FEF08A";
+        pCtx.fill();
+    }
+
+    function setDay(d) {
+        lunarDay = d;
+        document.getElementById('timeSlider').value = d;
+    }
+
+    function draw() {
+        ctx.fillStyle = "#060914";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // 星星
+        stars.forEach(s => {
+            ctx.fillStyle = `rgba(255, 255, 255, ${s.alpha})`;
+            ctx.beginPath();
+            ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+            ctx.fill();
+        });
+
+        // 太陽在右側 (X=860, Y=270)
+        const sunX = canvas.width - 90;
+        const sunY = canvas.height * 0.5;
+        const sunR = 70;
+
+        // 太陽光芒射線
+        const timeNow = Date.now() * 0.002;
+        for(let i=0; i<12; i++) {
+            const ry = 80 + i * 32;
+            const wave = Math.sin(timeNow + i) * 6;
+            ctx.beginPath();
+            ctx.moveTo(sunX - sunR, ry);
+            ctx.lineTo(260, ry + wave);
+            ctx.strokeStyle = "rgba(253, 230, 138, 0.12)";
+            ctx.lineWidth = 2;
+            ctx.stroke();
+        }
+
+        // 太陽光暈
+        const grad = ctx.createRadialGradient(sunX, sunY, sunR, sunX, sunY, sunR + 90);
+        grad.addColorStop(0, "rgba(245, 158, 11, 0.85)");
+        grad.addColorStop(1, "rgba(245, 158, 11, 0)");
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(sunX, sunY, sunR + 90, 0, Math.PI*2);
+        ctx.fill();
+
+        // 太陽本體
+        ctx.beginPath();
+        ctx.arc(sunX, sunY, sunR, 0, Math.PI*2);
+        ctx.fillStyle = "#FBBF24";
+        ctx.fill();
+        ctx.strokeStyle = "#FEF3C7";
+        ctx.lineWidth = 3;
+        ctx.stroke();
+
+        ctx.fillStyle = "#FEF3C7";
+        ctx.font = "bold 15px 'Noto Sans TC'";
+        ctx.fillText("☀️ 太陽", sunX - 55, sunY - 5);
+        ctx.font = "12px 'Noto Sans TC'";
+        ctx.fillText("【右側光源】", sunX - 68, sunY + 20);
+
+        // 地球在中央 (X=420, Y=270)
+        const earthX = 420;
+        const earthY = canvas.height * 0.5;
+        const earthR = 30;
+
+        // 月球公轉軌道
+        const moonOrbitR = 140;
+        ctx.beginPath();
+        ctx.arc(earthX, earthY, moonOrbitR, 0, Math.PI*2);
+        ctx.strokeStyle = "rgba(56, 189, 248, 0.35)";
+        ctx.setLineDash([5, 5]);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        // 繪製 8 個標準課本月相站點圓圈
+        const stationNames = ["初一(新月)", "初四(眉月)", "初八(上弦)", "十一(盈凸)", "十五(滿月)", "十八(虧凸)", "廿三(下弦)", "廿八(殘月)"];
+        for(let s=0; s<8; s++) {
+            const sang = -s * (Math.PI / 4); // 逆時針
+            const sx = earthX + moonOrbitR * Math.cos(sang);
+            const sy = earthY + moonOrbitR * Math.sin(sang);
+            
+            // 小節點
+            ctx.beginPath();
+            ctx.arc(sx, sy, 4, 0, Math.PI*2);
+            ctx.fillStyle = "rgba(148, 163, 184, 0.7)";
+            ctx.fill();
+            
+            // 站點文字標籤
+            ctx.fillStyle = "#94A3B8";
+            ctx.font = "11px 'Noto Sans TC'";
+            const offsetDist = 20;
+            ctx.fillText(stationNames[s], sx + Math.cos(sang)*offsetDist - 16, sy + Math.sin(sang)*offsetDist + 4);
+        }
+
+        // 月球當前位置 (逆時針運行：角度為 -t * 2 * pi)
+        const t = (lunarDay % 29.5) / 29.5;
+        const moonAngle = -t * Math.PI * 2;
+        const moonX = earthX + moonOrbitR * Math.cos(moonAngle);
+        const moonY = earthY + moonOrbitR * Math.sin(moonAngle);
+        const moonR = 13;
+
+        // 地球到月球的視線射線
+        ctx.beginPath();
+        ctx.moveTo(earthX, earthY);
+        ctx.lineTo(moonX, moonY);
+        ctx.strokeStyle = "rgba(52, 211, 153, 0.4)";
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+
+        // 繪製地球 (海洋藍底)
+        ctx.beginPath();
+        ctx.arc(earthX, earthY, earthR, 0, Math.PI*2);
+        ctx.fillStyle = "#0284C7";
+        ctx.fill();
+
+        // 地球自轉大陸動畫 (逆時針)
+        const earthRot = t * 29.5 * Math.PI * 2;
+        for(let p=0; p<4; p++) {
+            const cang = earthRot + p * (Math.PI/2);
+            const cx = earthX + 12 * Math.cos(cang);
+            const cy = earthY + 12 * Math.sin(cang);
+            ctx.fillStyle = "#22C55E";
+            ctx.beginPath();
+            ctx.arc(cx, cy, 6, 0, Math.PI*2);
+            ctx.fill();
+        }
+
+        // 地球陰影（左半邊為黑夜，垂直晨昏線）
+        ctx.beginPath();
+        ctx.arc(earthX, earthY, earthR, Math.PI/2, -Math.PI/2, false);
+        ctx.fillStyle = "rgba(6, 9, 20, 0.8)";
+        ctx.fill();
+        ctx.strokeStyle = "#38BDF8";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // 地球自轉軸 (傾斜 23.5°)
+        const tilt = 23.5 * Math.PI / 180;
+        const axisL = earthR + 10;
+        ctx.beginPath();
+        ctx.moveTo(earthX - axisL * Math.sin(tilt), earthY - axisL * Math.cos(tilt));
+        ctx.lineTo(earthX + axisL * Math.sin(tilt), earthY + axisL * Math.cos(tilt));
+        ctx.strokeStyle = "rgba(244, 63, 94, 0.8)";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        ctx.fillStyle = "#38BDF8";
+        ctx.font = "bold 13px 'Noto Sans TC'";
+        ctx.fillText("🌏 地球 (北極俯視)", earthX - 44, earthY + earthR + 18);
+        ctx.font = "11px 'Noto Sans TC'";
+        ctx.fillStyle = "#CBD5E1";
+        ctx.fillText("【右半白晝 / 左半黑夜】", earthX - 52, earthY + earthR + 32);
+
+        // 繪製軌道上的月球 (亮面全在右邊，暗面全在左邊！)
+        ctx.beginPath();
+        ctx.arc(moonX, moonY, moonR, 0, Math.PI*2);
+        ctx.fillStyle = "#FEF08A";
+        ctx.fill();
+
+        // 月球左半邊陰影 (背向右側太陽)
+        ctx.beginPath();
+        ctx.arc(moonX, moonY, moonR, Math.PI/2, -Math.PI/2, false);
+        ctx.fillStyle = "rgba(15, 23, 42, 0.85)";
+        ctx.fill();
+        ctx.strokeStyle = "#FDE68A";
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        ctx.fillStyle = "#FEF08A";
+        ctx.font = "bold 12px 'Noto Sans TC'";
+        ctx.fillText("🌕月球", moonX - 16, moonY - 15);
+
+        // 公轉逆時針箭頭
+        const arrowAng = moonAngle - 0.2;
+        const ax = earthX + moonOrbitR * Math.cos(arrowAng);
+        const ay = earthY + moonOrbitR * Math.sin(arrowAng);
+        ctx.fillStyle = "#00F0FF";
+        ctx.beginPath();
+        ctx.arc(ax, ay, 3.5, 0, Math.PI*2);
+        ctx.fill();
+
+        // 更新 UI
+        const info = getPhaseInfo(lunarDay);
+        document.getElementById('dateDisplay').textContent = `農曆八月 ${info.date}`;
+        document.getElementById('livePhaseName').textContent = `${info.name} ${info.emoji}`;
+        document.getElementById('livePhaseDate').textContent = `農曆八月 ${info.date} ‧ ${info.desc}`;
+        renderPhase(lunarDay);
+    }
+
+    function animate() {
+        if (isPlaying) {
+            lunarDay = (lunarDay + 0.04 * speed) % 29.5;
+            document.getElementById('timeSlider').value = lunarDay;
+        }
+        draw();
+        requestAnimationFrame(animate);
+    }
+
+    // 事件監聽
+    document.getElementById('timeSlider').addEventListener('input', (e) => {
+        lunarDay = parseFloat(e.target.value);
+    });
+
+    document.getElementById('speedSlider').addEventListener('input', (e) => {
+        speed = parseFloat(e.target.value);
+        document.getElementById('speedDisplay').textContent = `${speed.toFixed(1)}x`;
+    });
+
+    document.getElementById('playPauseBtn').addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        document.getElementById('playPauseBtn').textContent = isPlaying ? "⏸️ 暫停" : "▶️ 播放";
+    });
+
+    // 啟動主動運轉動畫
+    animate();
+</script>
+
+</body>
+</html>
